@@ -1,3 +1,5 @@
+import type { CardGroup, TagRepository } from "./card_types"
+
 function createLanguageTag(display: string) {
     return {
         icon: "nf-md-language_" + display.toLowerCase(),
@@ -6,13 +8,7 @@ function createLanguageTag(display: string) {
     }
 }
 
-export interface Tag {
-    icon: string,
-    display: string,
-    description: string
-}
-
-export const TAGS: Record<string, Tag | undefined> = {
+export const TAGS: TagRepository = {
     lua: createLanguageTag("Lua"),
     python: createLanguageTag("Python"),
     java: createLanguageTag("Java"),
@@ -47,19 +43,6 @@ export const TAGS: Record<string, Tag | undefined> = {
         display: "Closed Source",
         description: "The source code of the project is not publicly visible, but usually has a downloadable/playable binary."
     }
-}
-
-export interface CardGroup {
-    title: string,
-    description: string,
-    cards: Card[],
-}
-
-export interface Card {
-    name: string,
-    url: string,
-    description: string,
-    tags: string[]
 }
 
 export const ROBLOX_CARD_GROUP: CardGroup = {

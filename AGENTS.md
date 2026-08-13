@@ -10,6 +10,7 @@ Manage the background server with `astro dev stop`, `astro dev status`, and `ast
 
 ## Documentation
 
+Use the astro-docs MCP server to view documentation.
 Full documentation: https://docs.astro.build
 
 Consult these guides before working on related tasks:

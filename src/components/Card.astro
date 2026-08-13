@@ -1,11 +1,12 @@
 ---
-import { TAGS, type Card } from '../content/cards';
+import type { Card, TagRepository } from '../content/card_types';
 import Tag from './Tag.astro';
 
 interface Props {
-    cardData: Card
+    cardData: Card,
+    tagRepository: TagRepository
 }
-const { cardData } = Astro.props;
+const { cardData, tagRepository } = Astro.props;
 ---
 
 <div class="flex">
@@ -16,7 +17,7 @@ const { cardData } = Astro.props;
         <li class="inline">
             {
                 cardData.tags.map((tag) => {
-                    const tagData = TAGS[tag]
+                    const tagData = tagRepository[tag]
                     
                     if (tagData === undefined) {
                         throw new Error("Invalid tag: " + tag)

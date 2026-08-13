@@ -1,12 +1,13 @@
 ---
-import type { CardGroup } from '../content/cards';
+import type { CardGroup, TagRepository } from '../content/card_types';
 import Card from './Card.astro';
 
 interface Props {
-    listData: CardGroup
+    listData: CardGroup,
+    tagRepository: TagRepository
 }
 
-const { listData } = Astro.props
+const { listData, tagRepository } = Astro.props
 ---
 
 <div>
@@ -15,7 +16,7 @@ const { listData } = Astro.props
         <h3>{listData.description}</h3>
         {
             listData.cards.map((card) => {
-                <Card cardData={card}/>
+                <Card cardData={card} tagRepository={tagRepository}/>
             })
         }
     </li>

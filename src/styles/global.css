@@ -18,6 +18,10 @@
 }
 
 @layer components {
+  .hero-title {
+    font-size: min(4rem, calc(14.9vw - 0.44rem));
+  }
+
   .body-text {
     @apply mt-5 text-base leading-7 text-mist sm:text-lg sm:leading-8;
   }

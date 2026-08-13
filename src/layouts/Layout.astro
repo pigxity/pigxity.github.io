@@ -3,17 +3,18 @@ import '../styles/global.css'
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="bg-ink">
 	<head>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<title>pigxity</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="Pigxity's portfolio of games, libraries, and development tools." />
+		<link rel="icon" href="/favicon.png">
+		<title>Pigxity's Portfolio</title>
 	</head>
-	<body>
-		<div class="w-64">
+	<body class="min-h-screen bg-ink font-body text-bone antialiased selection:bg-signal selection:text-ink">
+		<div class="pointer-events-none fixed inset-0 -z-10 bg-[linear-gradient(to_right,rgba(242,240,234,0.025)_1px,transparent_1px)] bg-[size:12.5vw_100%]" aria-hidden="true"></div>
+		<main class="mx-auto w-[calc(100%-2rem)] py-8 sm:w-[calc(100%-4rem)] sm:py-12 lg:w-3/5 lg:py-16">
 			<slot />
-		</div>
+		</main>
 	</body>
 </html>

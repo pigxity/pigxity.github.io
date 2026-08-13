@@ -1,6 +1,7 @@
 ---
 import type { CardGroup, TagRepository } from '../content/card_types';
 import Card from './Card.astro';
+import SectionHeader from './SectionHeader.astro';
 
 interface Props {
     listData: CardGroup,
@@ -8,16 +9,18 @@ interface Props {
 }
 
 const { listData, tagRepository } = Astro.props
+const sectionId = `group-${listData.title.toLowerCase().replaceAll(' ', '-')}`;
+const projectCount = `${listData.cards.length} ${listData.cards.length === 1 ? 'project' : 'projects'}`;
 ---
 
-<div>
-    <li>
-        <h2>{listData.title}</h2>
-        <h3>{listData.description}</h3>
+<section aria-labelledby={sectionId}>
+    <SectionHeader id={sectionId} title={listData.title} description={listData.description} meta={projectCount} />
+
+    <ul class="relative mt-8 list-none space-y-4 border-l border-steel pl-4 sm:mt-10 sm:space-y-5 sm:pl-7">
         {
-            listData.cards.map((card) => {
+            listData.cards.map((card) => (
                 <Card cardData={card} tagRepository={tagRepository}/>
-            })
+            ))
         }
-    </li>
-</div>
+    </ul>
+</section>

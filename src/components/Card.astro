@@ -1,5 +1,6 @@
 ---
 import type { Card, TagRepository } from '../content/card_types';
+import CommonCard from './CommonCard.astro';
 import Tag from './Tag.astro';
 
 interface Props {
@@ -9,23 +10,36 @@ interface Props {
 const { cardData, tagRepository } = Astro.props;
 ---
 
-<div class="flex">
-    <a href={cardData.url}>
-        <p class="text-4xl">{cardData.name}</p>
-        <p class="text-2xl">{cardData.description}</p>
+<li>
+    <article>
+        <CommonCard
+            variant="project"
+            href={cardData.url}
+            ariaLabel={`Open ${cardData.name} (external link)`}
+        >
+            <div class="flex items-start justify-between gap-4">
+                <h3 class="font-cards text-[clamp(1.6rem,3vw,2rem)] font-bold leading-[0.95] tracking-[-0.03em] text-bone">
+                    {cardData.name}
+                </h3>
+                <span class="font-utility text-sm text-mist transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 motion-reduce:transform-none" aria-hidden="true">↗</span>
+            </div>
 
-        <li class="inline">
-            {
-                cardData.tags.map((tag) => {
-                    const tagData = tagRepository[tag]
-                    
-                    if (tagData === undefined) {
-                        throw new Error("Invalid tag: " + tag)
+            <div>
+                <p class="max-w-2xl text-[0.95rem] leading-7 text-mist sm:text-base">{cardData.description}</p>
+                <ul class="mt-5 flex list-none flex-wrap gap-2" aria-label={`${cardData.name} tags`}>
+                    {
+                        cardData.tags.map((tag) => {
+                            const tagData = tagRepository[tag]
+
+                            if (tagData === undefined) {
+                                throw new Error("Invalid tag: " + tag)
+                            }
+
+                            return <li><Tag tagData={tagData}/></li>
+                        })
                     }
-
-                    <Tag tagData={tagData}/>
-                })
-            }
-        </li>
-    </a>
-</div>
+                </ul>
+            </div>
+        </CommonCard>
+    </article>
+</li>

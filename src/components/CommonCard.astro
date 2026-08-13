@@ -1,0 +1,34 @@
+---
+interface Props {
+    variant: 'project' | 'tag',
+    href?: string,
+    ariaLabel?: string
+}
+
+const { variant, href, ariaLabel } = Astro.props;
+
+const contentClasses = variant === 'project'
+    ? 'grid gap-5 rounded-xl p-5 sm:p-6 md:grid-cols-[minmax(9rem,0.8fr)_minmax(0,1.6fr)] md:gap-8 lg:p-7'
+    : 'flex h-full min-w-0 items-center gap-3 px-4 py-3.5 sm:px-5 sm:py-4';
+---
+
+<div
+    class:list={[
+        'h-full rounded-xl border border-steel bg-graphite text-bone',
+        variant === 'project' && 'group transition-[border-color,transform,background-color] duration-300 hover:-translate-y-0.5 hover:border-mist hover:bg-[#191d23] motion-reduce:transform-none motion-reduce:transition-none'
+    ]}
+>
+    {href ? (
+        <a
+            href={href}
+            class:list={[contentClasses, 'outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-4 focus-visible:ring-offset-ink']}
+            aria-label={ariaLabel}
+        >
+            <slot />
+        </a>
+    ) : (
+        <div class={contentClasses}>
+            <slot />
+        </div>
+    )}
+</div>

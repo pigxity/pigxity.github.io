@@ -1,0 +1,33 @@
+---
+interface Props {
+    id: string,
+    title: string,
+    description?: string,
+    meta?: string
+}
+
+const { id, title, description, meta } = Astro.props;
+---
+
+<header>
+    <div class="flex items-end justify-between gap-4">
+        <h2
+            id={id}
+            class="font-display text-[clamp(2.25rem,5vw,3rem)] font-bold leading-[0.86] tracking-[-0.045em] text-bone"
+        >
+            {title}
+        </h2>
+        {meta && (
+            <p class="hidden pb-1 font-utility text-[0.65rem] uppercase tracking-[0.18em] text-mist sm:block">
+                {meta}
+            </p>
+        )}
+    </div>
+    <hr class="mt-5 border-0 border-t border-steel" />
+    {
+        description !== undefined && (
+            <p class="body-text">{description}</p>
+        )
+    }
+    <slot/>
+</header>

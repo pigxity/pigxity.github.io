@@ -1,2 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Silkscreen:wght@400;700&display=swap');
+
 @import "https://www.nerdfonts.com/assets/css/webfont.css";
 @import "tailwindcss";
+
+@theme {
+    --color-ink: #0b0d10;
+    --color-graphite: #15181d;
+    --color-bone: #f2f0ea;
+    --color-mist: #a7adb7;
+    --color-steel: #343a43;
+    --color-signal: #afc6ff;
+
+    --font-display: "Silkscreen", "Arial Narrow", "Aptos Display", "Roboto Condensed", sans-serif;
+    --font-cards: "Pixelify Sans", "SFMono-Regular", monospace;
+    --font-body: "Segoe UI", sans-serif;
+    --font-utility: "Cascadia Code", "SFMono-Regular", Consolas, monospace;
+}
+
+@layer components {
+  .body-text {
+    @apply mt-5 text-base leading-7 text-mist sm:text-lg sm:leading-8;
+  }
+}

@@ -1,14 +1,50 @@
 ---
 import CardGroupList from '../components/CardGroupList.astro';
-import { ROBLOX_CARD_GROUP, TAGS } from '../content/cards';
+import SectionHeader from '../components/SectionHeader.astro';
+import Tag from '../components/Tag.astro';
 import Layout from '../layouts/Layout.astro';
 
-const SAMPLE_TEXT = "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos."
+import { ROBLOX_CARD_GROUP } from '../content/cards';
+import { TAGS } from '../content/tags';
+
+const tags = Object.values(TAGS).filter((tag) => tag !== undefined);
 ---
 
 <Layout>
-	<p>{SAMPLE_TEXT}</p>
-	<CardGroupList listData={ROBLOX_CARD_GROUP} tagRepository={TAGS}/>
-	<p>{SAMPLE_TEXT}</p>
-	<CardGroupList listData={ROBLOX_CARD_GROUP} tagRepository={TAGS}/>
+	<div class="flex flex-col gap-24 sm:gap-32">
+		<header class="flex min-h-[58svh] flex-col justify-between sm:min-h-[32svh]">
+			<div class="flex items-center justify-between gap-8 font-utility text-[0.65rem] uppercase tracking-[0.18em] text-mist">
+				<p>Pigxity / Portfolio</p>
+				<p class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-signal" aria-hidden="true"></span> projects</p>
+			</div>
+
+			<div class="pt-24 sm:pt-32">
+				<h1 class="max-w-[13ch] font-display text-[clamp(4rem,4vw,3.75rem)] font-bold leading-[0.78] tracking-[-0.06em] text-bone">
+					Pigxity's Portfolio
+				</h1>
+			</div>
+
+			<p class="body-text">Welcome to my portfolio! Here, I list my past projects I've worked on. Most are open source; click on a card to visit its GitHub repository. Clicking on a card of a closed-source project (such as a game) would take you to a website where it can be used/played.</p>
+			<p class="body-text">Note that this page only lists my <i>public</i> projects. There are more I haven't released yet or don't want to release.</p>
+		</header>
+
+		<section aria-labelledby="tag-index-title">
+			<SectionHeader
+				id="tag-index-title"
+				title="Tags"
+				description='Projects listed below may be tagged with the following tags; here is what they mean:'
+			/>
+
+			<ul class="mt-8 grid list-none gap-3 sm:mt-10 md:grid-cols-2" aria-label="Project tag definitions">
+				{tags.map((tag) => <li><Tag tagData={tag} showDescription /></li>)}
+			</ul>
+		</section>
+
+		<CardGroupList listData={ROBLOX_CARD_GROUP} tagRepository={TAGS}/>
+	</div>
+
+	<footer class="mt-24 flex flex-col gap-3 border-t border-steel py-8 font-utility text-[0.65rem] uppercase tracking-[0.16em] text-mist sm:mt-32 sm:flex-row sm:items-center sm:justify-between sm:py-10">
+		<p>Pigxity / projects</p>
+		<p>Open source when possible</p>
+	</footer>
 </Layout>

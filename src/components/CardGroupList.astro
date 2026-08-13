@@ -1,0 +1,22 @@
+---
+import type { CardGroup } from '../content/cards';
+import Card from './Card.astro';
+
+interface Props {
+    listData: CardGroup
+}
+
+const { listData } = Astro.props
+---
+
+<div>
+    <li>
+        <h2>{listData.title}</h2>
+        <h3>{listData.description}</h3>
+        {
+            listData.cards.map((card) => {
+                <Card cardData={card}/>
+            })
+        }
+    </li>
+</div>

@@ -1,0 +1,14 @@
+---
+import type { Tag } from '../content/cards';
+
+interface Props {
+    tagData: Tag
+}
+
+const { tagData } = Astro.props;
+---
+
+<div class="flex">
+    <i class={"nf " + tagData.icon}></i>
+    <p>{tagData.display}</p>
+</div>

@@ -18,7 +18,7 @@ const { cardData, tagRepository } = Astro.props;
             ariaLabel={`Open ${cardData.name} (external link)`}
         >
             <div class="flex items-start justify-between gap-4">
-                <h3 class="font-cards text-[clamp(1.6rem,3vw,2rem)] font-bold leading-[0.95] tracking-[-0.03em] text-bone">
+                <h3 class="font-cards text-[clamp(1.2rem,3vw,1.5rem)] leading-[0.95] tracking-[-0.03em] text-bone">
                     {cardData.name}
                 </h3>
                 <span class="font-utility text-sm text-mist transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 motion-reduce:transform-none" aria-hidden="true">↗</span>

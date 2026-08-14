@@ -12,12 +12,13 @@ export const TAGS: TagRepository = {
     lua: createLanguageTag("Lua"),
     python: createLanguageTag("Python"),
     java: createLanguageTag("Java"),
+    javascript: createLanguageTag("JavaScript"),
     typescript: createLanguageTag("TypeScript"),
 
     ai_used: {
         icon: "nf-fa-robot",
         display: "AI-Assisted",
-        description: "AI coding tools were used for some of the project's code."
+        description: "AI coding tools were used for some (not all) of the project's code."
     },
 
     legacy: {
@@ -29,7 +30,7 @@ export const TAGS: TagRepository = {
     game: {
         icon: "nf-md-gamepad_variant",
         display: "Game",
-        description: "A playable game."
+        description: "A published game that can currently be played."
     },
 
     library: {

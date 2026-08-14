@@ -4,8 +4,9 @@ import SectionHeader from '../components/SectionHeader.astro';
 import Tag from '../components/Tag.astro';
 import Layout from '../layouts/Layout.astro';
 
-import { ROBLOX_CARD_GROUP } from '../content/cards';
+import { ROBLOX_CARD_GROUP, MINECRAFT_GROUP } from '../content/cards';
 import { TAGS } from '../content/tags';
+import { MISC_GROUP } from '../content/cards';
 
 const tags = Object.values(TAGS).filter((tag) => tag !== undefined);
 ---
@@ -25,7 +26,7 @@ const tags = Object.values(TAGS).filter((tag) => tag !== undefined);
 			</div>
 
 			<p class="body-text">Welcome to my portfolio! Here, I list my past projects I've worked on. Most are open source; click on a card to visit its GitHub repository. Clicking on a card of a closed-source project (such as a game) would take you to a website where it can be used/played.</p>
-			<p class="body-text">Note that this page only lists my <i>public</i> projects. There are more I haven't released yet or don't want to release.</p>
+			<p class="body-text">Note that this page only lists my <i>public</i> projects. There are more I haven't released yet or don't want to release. Some public projects are also ommitted due to insignificance; a full list can be found on my <a class="text-signal hover:text-blue-400" href="https://github.com/pigxity">GitHub</a>.</p>
 		</header>
 
 		<section aria-labelledby="tag-index-title">
@@ -38,13 +39,17 @@ const tags = Object.values(TAGS).filter((tag) => tag !== undefined);
 			<ul class="mt-8 grid list-none gap-3 sm:mt-10 md:grid-cols-2" aria-label="Project tag definitions">
 				{tags.map((tag) => <li><Tag tagData={tag} showDescription /></li>)}
 			</ul>
+
+			<p class="body-text mt-8 sm:mt-10">Anyways, on to the projects!</p>
 		</section>
 
 		<CardGroupList listData={ROBLOX_CARD_GROUP} tagRepository={TAGS}/>
+		<CardGroupList listData={MINECRAFT_GROUP} tagRepository={TAGS}/>
+		<CardGroupList listData={MISC_GROUP} tagRepository={TAGS}/>
 	</div>
 
 	<footer class="mt-24 flex flex-col gap-3 border-t border-steel py-8 font-utility text-[0.65rem] uppercase tracking-[0.16em] text-mist sm:mt-32 sm:flex-row sm:items-center sm:justify-between sm:py-10">
-		<p>Pigxity / projects</p>
-		<p>Open source when possible</p>
+		<p>Pigxity / Portfolio</p>
+		<p>(c) 2026 Pigxity | <a class="text-signal hover:text-blue-400" href="https://github.com/pigxity/pigxity.github.io">View the source code</a></p>
 	</footer>
 </Layout>

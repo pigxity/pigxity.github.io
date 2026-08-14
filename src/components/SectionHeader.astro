@@ -3,17 +3,25 @@ interface Props {
     id: string,
     title: string,
     description?: string,
-    meta?: string
+    meta?: string,
+    size?: number
 }
 
-const { id, title, description, meta } = Astro.props;
+const { id, title, description, meta, size = 1 } = Astro.props;
+
+const fontSize = `clamp(
+    ${2.25 * size}rem,
+    ${4 * size}vw,
+    ${2.25 * size}rem
+)`;
 ---
 
 <header>
     <div class="flex items-end justify-between gap-4">
         <h2
             id={id}
-            class="font-display text-[clamp(2.25rem,5vw,3rem)] font-bold leading-[0.86] tracking-[-0.045em] text-bone"
+            class="font-display font-bold leading-[0.86] tracking-[-0.045em] text-bone"
+            style={{fontSize}}
         >
             {title}
         </h2>

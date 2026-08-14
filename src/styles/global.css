@@ -3,6 +3,13 @@
 @import "https://www.nerdfonts.com/assets/css/webfont.css";
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Monocraft";
+  src: url("https://cdn.jsdelivr.net/gh/IdreesInc/Monocraft@main/dist/Monocraft-ttf/Monocraft.ttf")
+       format("truetype");
+  font-display: swap;
+}
+
 @theme {
     --color-ink: #0b0d10;
     --color-graphite: #15181d;
@@ -11,8 +18,8 @@
     --color-steel: #343a43;
     --color-signal: #afc6ff;
 
-    --font-display: "Silkscreen", "Arial Narrow", "Aptos Display", "Roboto Condensed", sans-serif;
-    --font-cards: "Pixelify Sans", "SFMono-Regular", monospace;
+    --font-display: "Silkscreen", "Arial Narrow", "Roboto Condensed", sans-serif;
+    --font-cards: "Monocraft", "SFMono-Regular", monospace;
     --font-body: "Segoe UI", sans-serif;
     --font-utility: "Cascadia Code", "SFMono-Regular", Consolas, monospace;
 }

@@ -10,11 +10,11 @@
   font-display: swap;
 }
 
-@theme {
+@theme static {
     --color-ink: #0b0d10;
     --color-graphite: #15181d;
     --color-bone: #f2f0ea;
-    --color-mist: #a7adb7;
+    --color-mist: #B7A9A7;
     --color-steel: #343a43;
     --color-signal: #afc6ff;
 

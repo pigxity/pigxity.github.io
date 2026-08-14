@@ -14,14 +14,14 @@ const { tagData, showDescription = false } = Astro.props;
     <CommonCard variant="tag">
         <i class:list={["nf shrink-0 text-base text-signal", tagData.icon]} aria-hidden="true"></i>
         <div class="min-w-0">
-            <p class="font-utility text-xs uppercase tracking-[0.12em] text-bone">{tagData.display}</p>
+            <p class="font-utility text-xs uppercase tracking-[0.12em] text-bone" style={tagData.style || ""}>{tagData.display}</p>
             <p class="mt-1.5 text-sm leading-6 text-mist">{tagData.description}</p>
         </div>
     </CommonCard>
 ) : (
     <div class="flex min-w-0 items-center gap-1.5 rounded-full border border-steel bg-graphite px-2.5 py-1 text-bone">
         <i class:list={["nf shrink-0 text-[0.7rem] text-signal", tagData.icon]} aria-hidden="true"></i>
-        <p class="font-utility text-[0.62rem] uppercase leading-none tracking-[0.12em] text-mist">
+        <p class="font-utility text-[0.62rem] uppercase leading-none tracking-[0.12em] text-mist" style={tagData.style || ""}>
             {tagData.display}
         </p>
     </div>

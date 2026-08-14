@@ -8,25 +8,25 @@ export const ROBLOX_CARD_GROUP: CardGroup = {
             name: "Iridium Mines",
             url: "https://www.roblox.com/games/11989155614",
             description: "A rogue-lite mining game on Roblox; currently under development.",
-            tags: ["lua", "game", "closed_source"]
+            tags: ["lua", "closed_source"]
         },
         {
             name: "lua-annotations",
             url: "https://github.com/pigxity-games/lua-annotations",
             description: "An annotation processor for Luau code written in python; can be used as a modular game framework.",
-            tags: ["python", "lua", "library"]
+            tags: ["ai_assisted", "python", "lua", "library"]
         },
         {
             name: "lune-test",
             url: "https://github.com/pigxity-games/lune-test",
             description: "A test runner script written for Lune which aims to replicate a Roblox environment.",
-            tags: ["lua", "ai_used", "library"]
+            tags: ["ai_generated", "lua", "library"]
         },
         {
             name: "permanote",
             url: "https://www.roblox.com/games/11323346061",
             description: "A game that allows players to place notes around the map which other players can read; a simple project that only took a day or two.",
-            tags: ["lua", "game", "closed_source"]
+            tags: ["lua", "closed_source"]
         },
         {
             name: "RobloxTools",
@@ -38,7 +38,7 @@ export const ROBLOX_CARD_GROUP: CardGroup = {
             name: "Piggy Games Fan Group",
             url: "https://www.roblox.com/communities/6412921/Piggy-Games-Fan-Group",
             description: "A collection of cringe games I made ~5 years ago. I lost access to the account that owns them.",
-            tags: ["lua", "game", "legacy", "closed_source"]
+            tags: ["lua", "legacy", "closed_source"]
         },
     ]
 }
@@ -49,7 +49,7 @@ export const MINECRAFT_GROUP: CardGroup = {
     cards: [
         {
             name: "DogeMines Server",
-            url: "https://github.com/dogemines/dogemines-framework",
+            url: "https://github.com/dogemines/dogemines-server",
             description: "An old project of mine where I tried to make a vanilla Minecraft server with custom content. Archived; no longer updated.",
             tags: ["java", "legacy"]
         },
@@ -60,16 +60,16 @@ export const MINECRAFT_GROUP: CardGroup = {
             tags: ["java", "legacy", "library"]
         },
         {
+            name: "minecraft-bot",
+            url: "https://github.com/pigxity/minecraft-bot",
+            description: "A simple Minecraft bot that uses the Mineflayer API; controlled with terminal commands. Created to automate actions on a server's custom gamemode.",
+            tags: ["ai_assisted", "typescript"]
+        },
+        {
             name: "EasyMapDownload",
             url: "https://github.com/pigxity/EasyMapDownload",
             description: "A Fabric mod that allows you to install Minecraft worlds directly from your downloads folder.",
             tags: ["java"]
-        },
-        {
-            name: "minecraft-bot",
-            url: "https://github.com/pigxity/minecraft-bot",
-            description: "A simple Minecraft bot that uses the Mineflayer API; controlled with terminal commands. Created to automate actions on a server's custom gamemode.",
-            tags: ["typescript"]
         },
         {
             name: "minescript-libs",
@@ -88,13 +88,13 @@ export const MISC_GROUP: CardGroup = {
             name: "ai-discord-agent",
             url: "https://github.com/pigxity/ai-discord-agent",
             description: "My first foray into Machine Learning; a fine-tune of Qwen3 using my discord messages.",
-            tags: ["python", "ai_used"]
+            tags: ["ai_generated", "python"]
         },
         {
             name: "Pigxity's Portfolio",
             url: "https://github.com/pigxity/pigxity.github.io",
             description: "The website you're visiting right now!",
-            tags: ["typescript", "ai_used"]
+            tags: ["ai_assisted", "typescript"]
         },
         {
             name: "NexusDL",

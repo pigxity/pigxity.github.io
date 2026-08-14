@@ -3,7 +3,8 @@ export type TagRepository = Record<string, Tag | undefined>
 export interface Tag {
     icon: string,
     display: string,
-    description: string
+    description: string,
+    style?: string
 }
 
 export interface CardGroup {

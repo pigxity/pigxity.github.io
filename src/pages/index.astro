@@ -25,19 +25,21 @@ const tags = Object.values(TAGS).filter((tag) => tag !== undefined);
 				</h1>
 			</div>
 
-			<p class="body-text">Welcome to my portfolio! Here, I've listed my past projects I've worked on. Most are open source; click on a card to visit its GitHub repository. Clicking on a card of a closed-source project (such as a game) would take you to a website where it can be played/used.</p>
-			<p class="body-text">Note that this page only lists my <i>public</i> projects. There are more I haven't released yet or don't want to release. Some public projects are also ommitted due to insignificance; a full list can be found on my <a class="text-signal hover:text-blue-400" href="https://github.com/pigxity">GitHub</a>.</p>
-			<p class="body-text">Projects are ordered by their significance. The best work (in my opinion) is at the top of each section.</p>
+			<p class="body-text">Welcome to my portfolio! Here are a few past projects I've worked on. Open source projects link to their GitHub repository; all are documented with at least a README file. A closed-source project, such as a game, would link to a website where it can be played/used.</p>
+			<p class="body-text">Note that this page only includes selected public projects. Some are private and I don't want to release them. Some are omitted due to insignificance, but can be found on my <a class="text-signal hover:text-blue-400" href="https://github.com/pigxity">GitHub</a>.</p>
+			<p class="body-text">Projects are ordered by significance. The best work (in my opinion) is at the top of each section.</p>
 		</header>
 
 		<section>
 			<SectionHeader
 				id="tag-index-title"
 				title="Tags"
-				description='Projects listed below may be tagged with the following tags; here is what they mean:'
+				description="Projects listed below may be tagged with the following:"
 				size={0.8}
 				hr={false}
 			/>
+
+			<p class="border-l border-steel pl-5 body-text"><b>About AI:</b> I do frequently use coding AI for new projects, but generated output is always reviewed for those tagged as <b>AI-Assisted</b>. Those tagged as <b>AI-Generated</b> are more or less <i>throwaway projects</i> where longevity doesn't matter. All projects here that use AI-generated code are tagged.</p>
 
 			<ul class="mt-8 grid list-none gap-3 sm:mt-10 md:grid-cols-2" aria-label="Project tag definitions">
 				{tags.map((tag) => <li><Tag tagData={tag} showDescription /></li>)}

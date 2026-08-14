@@ -23,11 +23,16 @@ export const TAGS: TagRepository = {
         style: "color: #BA5959",
     },
 
-    lua: createLanguageTag("Lua"),
     python: createLanguageTag("Python"),
     java: createLanguageTag("Java"),
-    javascript: createLanguageTag("JavaScript"),
     typescript: createLanguageTag("TypeScript"),
+    lua: createLanguageTag("Lua"),
+
+    web_based: {
+        icon: "nf-md-web",
+        display: "Web-App",
+        description: "An online app or website. Always uses (Java/Type)Script + HTML + CSS; may use a framework."
+    },
 
     legacy: {
         icon: "nf-cod-arrow_left",

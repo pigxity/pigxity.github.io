@@ -31,8 +31,8 @@ export const ROBLOX_CARD_GROUP: CardGroup = {
         {
             name: "RobloxTools",
             url: "https://github.com/pigxity/RobloxTools",
-            description: 'My attempt at an "account switcher" Roblox extension; useless now, since Roblox added this as a feature.',
-            tags: ["javascript", "legacy"]
+            description: 'My attempt at an "account switcher" browser extension for Roblox; useless now, since they added this as a site feature.',
+            tags: ["web_based", "legacy"]
         },
         {
             name: "Piggy Games Fan Group",
@@ -94,7 +94,7 @@ export const MISC_GROUP: CardGroup = {
             name: "Pigxity's Portfolio",
             url: "https://github.com/pigxity/pigxity.github.io",
             description: "The website you're visiting right now!",
-            tags: ["ai_assisted", "typescript"]
+            tags: ["ai_assisted", "typescript", "web_based"]
         },
         {
             name: "NexusDL",

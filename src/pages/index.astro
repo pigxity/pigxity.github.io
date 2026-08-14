@@ -19,21 +19,24 @@ const tags = Object.values(TAGS).filter((tag) => tag !== undefined);
 				<p class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-signal" aria-hidden="true"></span> projects</p>
 			</div>
 
-			<div class="pt-24 sm:pt-32">
+			<div class="pt-24 sm:pt-32 mb-5">
 				<h1 class="hero-title max-w-[13ch] font-display font-bold leading-[0.78] tracking-[-0.06em] text-bone">
 					Pigxity's Portfolio
 				</h1>
 			</div>
 
-			<p class="body-text">Welcome to my portfolio! Here, I list my past projects I've worked on. Most are open source; click on a card to visit its GitHub repository. Clicking on a card of a closed-source project (such as a game) would take you to a website where it can be used/played.</p>
+			<p class="body-text">Welcome to my portfolio! Here, I've listed my past projects I've worked on. Most are open source; click on a card to visit its GitHub repository. Clicking on a card of a closed-source project (such as a game) would take you to a website where it can be played/used.</p>
 			<p class="body-text">Note that this page only lists my <i>public</i> projects. There are more I haven't released yet or don't want to release. Some public projects are also ommitted due to insignificance; a full list can be found on my <a class="text-signal hover:text-blue-400" href="https://github.com/pigxity">GitHub</a>.</p>
+			<p class="body-text">Projects are ordered by their significance. The best work (in my opinion) is at the top of each section.</p>
 		</header>
 
-		<section aria-labelledby="tag-index-title">
+		<section>
 			<SectionHeader
 				id="tag-index-title"
 				title="Tags"
 				description='Projects listed below may be tagged with the following tags; here is what they mean:'
+				size={0.8}
+				hr={false}
 			/>
 
 			<ul class="mt-8 grid list-none gap-3 sm:mt-10 md:grid-cols-2" aria-label="Project tag definitions">

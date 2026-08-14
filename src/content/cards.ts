@@ -11,16 +11,16 @@ export const ROBLOX_CARD_GROUP: CardGroup = {
             tags: ["lua", "game", "closed_source"]
         },
         {
-            name: "lune-test",
-            url: "https://github.com/pigxity-games/lune-test",
-            description: "A test runner script written for Lune which aims to replicate a Roblox environment.",
-            tags: ["lua", "ai_used", "library"]
-        },
-        {
             name: "lua-annotations",
             url: "https://github.com/pigxity-games/lua-annotations",
             description: "An annotation processor for Luau code written in python; can be used as a modular game framework.",
             tags: ["python", "lua", "library"]
+        },
+        {
+            name: "lune-test",
+            url: "https://github.com/pigxity-games/lune-test",
+            description: "A test runner script written for Lune which aims to replicate a Roblox environment.",
+            tags: ["lua", "ai_used", "library"]
         },
         {
             name: "permanote",
@@ -48,13 +48,13 @@ export const MINECRAFT_GROUP: CardGroup = {
     description: "Various Java projects to do with the Minecraft game: mods, plugins, etc.",
     cards: [
         {
-            name: "dogemines-server",
+            name: "DogeMines Server",
             url: "https://github.com/dogemines/dogemines-framework",
             description: "An old project of mine where I tried to make a vanilla Minecraft server with custom content. Archived; no longer updated.",
             tags: ["java", "legacy"]
         },
         {
-            name: "dogemines-framework",
+            name: "DogeMines Framework",
             url: "https://github.com/dogemines/dogemines-framework",
             description: "The main library/framework plugin of the above project; helps add custom content such as items, blocks, etc.",
             tags: ["java", "legacy", "library"]
@@ -91,6 +91,12 @@ export const MISC_GROUP: CardGroup = {
             tags: ["python", "ai_used"]
         },
         {
+            name: "Pigxity's Portfolio",
+            url: "https://github.com/pigxity/pigxity.github.io",
+            description: "The website you're visiting right now!",
+            tags: ["typescript", "ai_used"]
+        },
+        {
             name: "NexusDL",
             url: "https://github.com/pigxity/NexusDL",
             description: "A custom downloader for mods from NexusMods that avoids their API to bypass free-tier restrictions.",
@@ -101,12 +107,6 @@ export const MISC_GROUP: CardGroup = {
             url: "https://github.com/pigxity/pymsbt",
             description: "A library for parsing and saving .msbt files, a proprietary file format created by Nintendo.",
             tags: ["python", "library"]
-        },
-        {
-            name: "Pigxity's Portfolio",
-            url: "https://github.com/pigxity/pigxity.github.io",
-            description: "The website you're visiting right now!",
-            tags: ["typescript"]
         },
     ]
 }

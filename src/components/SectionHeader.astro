@@ -4,10 +4,11 @@ interface Props {
     title: string,
     description?: string,
     meta?: string,
-    size?: number
+    size?: number,
+    hr?: boolean
 }
 
-const { id, title, description, meta, size = 1 } = Astro.props;
+const { id, title, description, meta, size = 1, hr = true } = Astro.props;
 
 const fontSize = `clamp(
     ${2.25 * size}rem,
@@ -31,7 +32,11 @@ const fontSize = `clamp(
             </p>
         )}
     </div>
-    <hr class="mt-5 border-0 border-t border-steel" />
+    {
+        hr && (
+            <hr class="mt-5 border-0 border-t border-steel" />
+        )
+    }
     {
         description !== undefined && (
             <p class="body-text">{description}</p>

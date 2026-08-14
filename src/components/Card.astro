@@ -1,5 +1,5 @@
 ---
-import type { Card, TagRepository } from '../content/card_types';
+import { getOrderedCardTags, type Card, type TagRepository } from '../content/card_types';
 import CommonCard from './CommonCard.astro';
 import Tag from './Tag.astro';
 
@@ -28,15 +28,9 @@ const { cardData, tagRepository } = Astro.props;
                 <p class="max-w-2xl text-[0.95rem] leading-7 text-mist sm:text-base">{cardData.description}</p>
                 <ul class="mt-5 flex list-none flex-wrap gap-2" aria-label={`${cardData.name} tags`}>
                     {
-                        cardData.tags.map((tag) => {
-                            const tagData = tagRepository[tag]
-
-                            if (tagData === undefined) {
-                                throw new Error("Invalid tag: " + tag)
-                            }
-
-                            return <li><Tag tagData={tagData}/></li>
-                        })
+                        getOrderedCardTags(cardData.tags, tagRepository).map((tagData) =>
+                            <li><Tag tagData={tagData}/></li>
+                        )
                     }
                 </ul>
             </div>

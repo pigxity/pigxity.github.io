@@ -19,3 +19,17 @@ export interface Card {
     description: string,
     tags: string[]
 }
+
+export function getOrderedCardTags(cardTags: readonly string[], tagRepository: TagRepository): Tag[] {
+    const requestedTags = new Set(cardTags)
+
+    for (const tag of cardTags) {
+        if (tagRepository[tag] === undefined) {
+            throw new Error("Invalid tag: " + tag)
+        }
+    }
+
+    return Object.entries(tagRepository)
+        .filter(([tagId]) => requestedTags.has(tagId))
+        .map(([_, tagData]) => tagData!)
+}
